@@ -1,0 +1,42 @@
+
+
+.form{
+    padding: 0 20px;
+}
+
+.form-space{
+    padding: 10px;
+}
+
+input{
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+input:hover{
+    border: 3px solid #ff3333; 
+    box-shadow: 2px;
+}
+
+input[type=button], input[type=submit], button{
+    background-color: #4caf50;
+    border: none ;
+    color: white;
+    padding:  15px 40px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;  
+}
+
+button [disabled]{
+    opacity: 0.8;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+
+}

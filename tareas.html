@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/grid-view.css">
+    <link rel="stylesheet" type="text/css" href="./css/form.css"> 
+    
+    <title>C.V. Victor Torres </title>
+    
+    
+</head> 
+<body>
+    <header class="header">
+        <h1 class="tittle-header info-tittle-header" > Rockstar Developer </h1>
+        <h4 class="subtittle-header info-subtittle-header">  Victor M. Torres Valencia </h4>
+        <!-- <img src="./images/header.jpg" width="80%" height="100%" alt="Ascendent"> -->
+        <div class="image-header">   </div>
+    </header>
+
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li class="navbar-url active">
+                <a href="index.html"> Inicio </a> 
+            </li> 
+            <li  class="navbar-url ">
+                <a href="index.html#quien-soy">Quien soy</a>
+            </li> 
+            <li  class="navbar-url" >
+                <a href="index.html#experiencia">Experiencia</a>
+            </li> 
+            <li  class="navbar-url" >
+                <a href="index.html#contacto">Contacto </a>
+            </li>  
+            <li  class="navbar-url" >
+                <a href="#tasks.html">Tareas </a>
+            </li>                        
+        </ul>          
+    </nav>
+    
+    <main class="container">
+           <section class="tareas">
+               <h2>Tareas</h2>
+
+			<div class="col-6">
+				<h3>Añadir nueva tarea</h3>
+				<form>
+					<input type="text" id="newTaskName" name="name" placeholder="Nueva tarea..." required>
+					<br>
+					<br>
+					<button id="sendNewTask">Enviar</button>
+				</form>
+			</div>
+
+			<div class="col-6">
+				<h3>Tareas pendientes</h3>
+				<div class="loader"></div>
+				<div>
+					<ul id="taskContainer">
+					</ul>
+				</div>
+			</div>
+          </section>
+ 
+    </main>
+</body>
+<script src="./js/ajax.js"></script>
+<script src="./js/scroll.js"></script>
+<script src="./js/jquery-3.2.1.js"></script>
+<script src="./js/form.js"></script>
+
+
+</html>
