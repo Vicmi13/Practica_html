@@ -1,5 +1,6 @@
-var form =  document.getElementsByTagName('form')[0];
 
+
+var form =  document.getElementsByTagName('form')[0];
 var inputNombre = document.getElementById("nombre");
 var inputApellidos = document.getElementById("apellidos");
 var emailInput = document.getElementById("email");
@@ -10,8 +11,17 @@ var radioOptions = {
     option1: document.getElementById("social-media"),
     option2: document.getElementById("estdudiamos-juntos"),
     option3: document.getElementById("hackaton"),
-    option4: document.getElementById("hackaton")
+    option4: document.getElementById("otro")
 };
+
+
+var validateTextArea = radioOptions.option4.addEventListener('click', function(event){
+    event.preventDefault();
+    console.log('Se selecciona la opción otro');
+    //logica de text area. Crear y validar que se insert el número correcto de palabras
+})
+
+
 
 var loadingIcon = document.createElement('i');
 loadingIcon.classList.add("fa", "fa-spinner", "fa-spin");
@@ -43,6 +53,12 @@ form.addEventListener("submit", function (event) {
     if (radioOptions.option1.checkValidity() === false) {
         alert("Introduce el tipo de mision");
         event.preventDefault();
+        return false;
+    }
+
+    if(!validateTextArea){
+        alert("Es necesario llenar el campo de 'Text Area ' ");
+        //poner focus en el textArea
         return false;
     }
  

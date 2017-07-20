@@ -4,6 +4,8 @@ var navbarItems = document.getElementsByClassName('navbar-url');
 for (var i = 0; i < navbarItems.length; i++) {
     navbarItems[i].addEventListener('click', function (event) {
         var sectionRedirect = this.getElementsByTagName('a')[0].href.split("#");
+        console.log(sectionRedirect[0]);
+        console.log(sectionRedirect[1]);
         deleteActiveClass();
         this.classList.add('active');
         
@@ -26,7 +28,9 @@ function getElementByIdAndScroll (id) {
     var elem;
     if (id === '') {
         elem = document.getElementsByClassName('header')[0];
+        console.log('elemen Index' + elem);
     } else {
+        console.log('elemen Header' + elem);
         elem = document.getElementById(id);
     }
 
