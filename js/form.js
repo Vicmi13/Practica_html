@@ -18,6 +18,7 @@ var radioOptions = {
 var validateTextArea = radioOptions.option4.addEventListener('click', function(event){
     event.preventDefault();
     console.log('Se selecciona la opción otro');
+    
     //logica de text area. Crear y validar que se insert el número correcto de palabras
 })
 
