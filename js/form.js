@@ -15,12 +15,30 @@ var radioOptions = {
 };
 
 
-var validateTextArea = radioOptions.option4.addEventListener('click', function(event){
+
+var validateTextArea = radioOptions.option4;
+
+
+
+validateTextArea.addEventListener('click', function(event){
     event.preventDefault();
-    console.log('Se selecciona la opción otro');
-    
-    //logica de text area. Crear y validar que se insert el número correcto de palabras
+    $('.text-area').show();
+    console.log(contarPalabras("hello world"));
 })
+
+contadorPalabras.addEventListener('MouserOver', function (){
+    
+})
+
+function contarPalabras(words){
+    if(words.split(' ').length < 150 ){
+
+    }
+    return ;
+}
+
+
+
 
 
 
