@@ -8,7 +8,7 @@ var drawTasks = function() {
 	} else {
 		var contentToAdd = '';
 		for (var i = 0; i < tasks.length; i++) {
-			contentToAdd += '<li class="task-item">' + tasks[i].name + '<button class="deleteTask" data-task-id="' + tasks[i].id + '">Eliminar</button></li>'
+			contentToAdd.innerHTML = '<li class="task-item">' + tasks[i].name + '<button class="deleteTask" data-task-id="' + tasks[i].id + '">Eliminar</button></li>'
 		}
 		$('#taskContainer').append(contentToAdd);
 	}
@@ -22,7 +22,8 @@ var createTask = function (name) {
     XHR.setRequestHeader("Content-Type", "application/json");
 
     XHR.onreadystatechange = function () {
-        if (XHR.readyState === 4) {
+        if (XHR.readyState === 4 && XHR.status === 201) {
+            console.log(XHR.responseText);
             tasks.push(JSON.parse(XHR.responseText));
             drawTasks();
         } else if (XHR.readyState === 4 && XHR.status === 404) {
@@ -53,4 +54,5 @@ var deleteTask = function (id) {
 document.getElementById("sendNewTask").addEventListener("click", function (event) {
     event.preventDefault();
 });
-    createTask(document.getElementById("newTaskName").value);
+
+createTask(document.getElementById("newTaskName").value);
