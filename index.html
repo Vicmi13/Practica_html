@@ -44,6 +44,7 @@
     
     <main class="container">
         <section id="quien-soy" class="quien-soy-top clearfix section-space" >
+            <A name="quien-soy"></A>
               <div class="image-twofaces col-7">  
                     <div class="front-image quiensoy-images">
                         <img src="./images/img_avatar3.png" width="400px" height="360px" alt="Mi Foto">
@@ -64,7 +65,7 @@
 
           
         <section id="experiencia" class="experiencia  section-space">
-             
+              <A name="experiencia">
                   <div class="info-col">
                         Empresa 
                   </div>
@@ -157,13 +158,13 @@
                 </div> 
            
             </table>
-             
+          </A>   
         </section>
 
 
         <section  id="contacto"  class="contacto section-space">
-            <h1> Contactame </h1>
-            
+            <A name="contacto"></A>
+            <h1> Contactame </h1>      
             <h4>Deja tus datos y me pondré en contacto contigo. </h4>
             <div class="col-12">
                 <div class="form">
@@ -187,20 +188,24 @@
                     
                                 <div class=" col-6">
                                     <div>Cómo me has conocido?</div><br>
-                                    <label for="social-media">social media</label>
+                                    <label for="social-media">Redes Sociales</label>
                                      <input type="radio" id="social-media" name="conociendome" value="social media" required>
 
-                                     <label for="estdudiamos-juntos">Estdudiamos juntos</label>
+                                     <label for="estdudiamos-juntos">Estudiamos juntos</label>
                                      <input type="radio" id="estdudiamos-juntos" name="conociendome" value="Ajuste de cuentas" required>
 
-                                     <label for="hackaton">Hackaton o meetup</label>
+                                     <label for="hackaton">Hackaton o Meetup</label>
                                      <input type="radio" id="hackaton" name="conociendome" value="Hackaton o meetup" required>
 
                                      <label for="otro">Otro</label>
                                      <input type="radio" id="otro" name="conociendome" value="Otro" required>
-                                     <div class="text-area">
-                                         <textarea rows="8" cols="50"></textarea>
+                                     <br><br>
+                                     <div class="textArea-square">
+                                         <textarea  class="text-area" rows="8" cols="50"></textarea>
+                                          <small>Máximo 150 palabras</small>
                                      </div>
+                                     <p id="demo"></p>
+                                    
                                     
                                      
 

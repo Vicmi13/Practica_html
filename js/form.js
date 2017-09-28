@@ -17,27 +17,24 @@ var radioOptions = {
 
 
 var validateTextArea = radioOptions.option4;
-
-
-
 validateTextArea.addEventListener('click', function(event){
     event.preventDefault();
-    $('.text-area').show();
-    console.log(contarPalabras("hello world"));
+    $('.textArea-square').toggle();
 })
 
-contadorPalabras.addEventListener('MouserOver', function (){
-    
-})
 
-function contarPalabras(words){
-    if(words.split(' ').length < 150 ){
-
+$('.text-area').blur( function (event) {
+    event.preventDefault();
+    var numeroPalabras = this.value.split(' ').length;
+    document.getElementById("demo").innerHTML = "<small>Palabras escritas </small> <b>" + numeroPalabras + "</b>"
+    if(numeroPalabras > 150){
+        alert('Numero de palabras excedidas, favor de verfircar')
+        return;
+    }else{
+        return true;
     }
-    return ;
-}
-
-
+    
+}) 
 
 
 
@@ -77,7 +74,7 @@ form.addEventListener("submit", function (event) {
 
     if(!validateTextArea){
         alert("Es necesario llenar el campo de 'Text Area ' ");
-        //poner focus en el textArea
+        $('.text-area').focus();
         return false;
     }
  
