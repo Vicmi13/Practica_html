@@ -76,8 +76,10 @@ document.getElementById("sendNewTask").addEventListener("click", function (event
 getTasks();
 
 
+
+
 $(document).on('click', '.deleteTask', function(){
     console.log('entra a delete')
-    var id = this.data('taskId');
-    deleteTask(id);
+	var id = $(this).data('taskId');
+	deleteTask(id);
 });

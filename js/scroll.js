@@ -30,8 +30,8 @@ function getElementByIdAndScroll (id) {
         elem = document.getElementsByClassName('header')[0];
         console.log('elemen Index' + elem);
     } else {
-        console.log('elemen Header' + elem);
         elem = document.getElementById(id);
+        console.log('elemen Header' + elem);
     }
 
     scrollToElement(elem);
@@ -40,7 +40,7 @@ function getElementByIdAndScroll (id) {
 
 function scrollToElement (element) {
     var jump = parseInt(element.getBoundingClientRect().top * 0.3);
-
+    console.log('value of the scroll to jump' + jump);
     document.body.scrollTop += jump;
 
     if (!element.lastJump || element.lastJump > Math.abs(jump)) {
@@ -55,7 +55,6 @@ function scrollToElement (element) {
 
 var acumulativeOffset = function (element) {
     var top = 0;
-
     do {
         top += element.offsetTop || 0;
         element = element.offsetParent;
@@ -96,6 +95,16 @@ function changeMenuStyle(event) {
         deleteActiveClass();
         document.querySelector("a[href$='quien-soy']").parentNode.classList.add("active");
     } else if (pageOffset >= offsetExperiencia &&  offsetQuienSoy < offsetContacto) {
+        if (!previous || previous !== 3) {
+            previous = 3;
+        } else if (previous === 3){
+            return false;
+        }
+
+        deleteActiveClass();
+        document.querySelector("a[href$='experiencia']").parentNode.classList.add("active");
+    }   
+    else if (pageOffset >= offsetExperiencia &&  offsetQuienSoy < offsetContacto) {
         if (!previous || previous !== 3) {
             previous = 3;
         } else if (previous === 3){

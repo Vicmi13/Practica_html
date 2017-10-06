@@ -13,10 +13,9 @@ var radioOptions = {
     option3: document.getElementById("hackaton"),
     option4: document.getElementById("otro")
 };
-
-
-
 var validateTextArea = radioOptions.option4;
+
+
 validateTextArea.addEventListener('click', function(event){
     event.preventDefault();
     $('.textArea-square').toggle();
