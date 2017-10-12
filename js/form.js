@@ -13,9 +13,22 @@ var radioOptions = {
     option4: document.getElementById("otro")
 };
 
+function toggle(elemento){
+   if(radioOptions.option1.checked || radioOptions.option3.checked || radioOptions.option2.checked ){
+        console.log("Cheched one of the radio buttons");
+         $('.textArea-square').css("display", "none");
+    }else{
+        console.log("Cheched OTRO button");  
+        $('.textArea-square').css("display", "block");    
+    }        
+}
+
+if(radioOptions.option1.checked || radioOptions.option3.checked || radioOptions.option2.checked ){
+    console.log("Cheched one of the radio buttons")
+}
 var validateTextArea = radioOptions.option4;
 validateTextArea.addEventListener('click', function(event){
-    $('.textArea-square').toggle();
+    $('.textArea-square').css("display", "block");
 });
 
 var loadingIcon = document.createElement('i');

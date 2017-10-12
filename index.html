@@ -174,7 +174,7 @@
                                     <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
 
                                     <label for="apellidos">Apellidos: </label>
-                                    <input type="text" id="apellidos" name="apellidos" placeholder="apellidos">
+                                    <input type="text" id="apellidos" name="apellidos" placeholder="apellidos" required>
                                     <br> <br>
                                      <label for="email">Email:</label>
                                     <input type="email" id="email" name="email" placeholder="name@company.com"
@@ -189,22 +189,23 @@
                                 <div class=" col-6">
                                     <div>Cómo me has conocido?</div><br>
                                     <label for="social-media">Redes Sociales</label>
-                                     <input type="radio" id="social-media" name="conociendome" value="social media" required>
+                                     <input type="radio" id="social-media" name="conociendome" onclick="toggle(this)" value="social media" required>
 
                                      <label for="estdudiamos-juntos">Estudiamos juntos</label>
-                                     <input type="radio" id="estdudiamos-juntos" name="conociendome" value="Ajuste de cuentas" required>
+                                     <input type="radio" id="estdudiamos-juntos" name="conociendome" onclick="toggle(this)" value="Ajuste de cuentas" required>
 
                                      <label for="hackaton">Hackaton o Meetup</label>
-                                     <input type="radio" id="hackaton" name="conociendome" value="Hackaton o meetup" required>
+                                     <input type="radio" id="hackaton" name="conociendome" onclick="toggle(this)"  value="Hackaton o meetup" required>
 
                                      <label for="otro">Otro</label>
-                                     <input type="radio" id="otro" name="conociendome" value="Otro" required>
+                                     <input type="radio" id="otro" name="conociendome" onclick="toggle(this)" value="Otros" required>
                                      <br><br>
                                      <div class="textArea-square">
                                          <textarea  class="text-area" rows="8" cols="50"></textarea>
                                           <small>Máximo 150 palabras</small>
+                                          <p id="demo"></p>
                                      </div>
-                                     <p id="demo"></p>
+                                     
                                     
                                     
                                      
@@ -238,6 +239,7 @@
 <script src="./js/scroll.js"></script>
 <script src="./js/jquery-3.2.1.js"></script>
 <script src="./js/form.js"></script>
+<script src="./js/notification.js"></script>
 
 
 </html>
