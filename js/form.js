@@ -1,6 +1,5 @@
-
-
 var form =  document.getElementsByTagName('form')[0];
+
 var inputNombre = document.getElementById("nombre");
 var inputApellidos = document.getElementById("apellidos");
 var emailInput = document.getElementById("email");
@@ -13,30 +12,27 @@ var radioOptions = {
     option3: document.getElementById("hackaton"),
     option4: document.getElementById("otro")
 };
+
 var validateTextArea = radioOptions.option4;
-
-
 validateTextArea.addEventListener('click', function(event){
-    event.preventDefault();
     $('.textArea-square').toggle();
-})
+});
 
+var loadingIcon = document.createElement('i');
+loadingIcon.classList.add("fa", "fa-spinner", "fa-spin");
 
 $('.text-area').blur( function (event) {
     event.preventDefault();
     var numeroPalabras = this.value.split(' ').length;
     document.getElementById("demo").innerHTML = "<small>Palabras escritas </small> <b>" + numeroPalabras + "</b>"
     if(numeroPalabras > 150){
-        alert('Numero de palabras excedidas, favor de verfircar')
+        alert('Numero de palabras excedidas, favor de veriircar')
         return;
     }else{
         return true;
     }
     
 }) 
-
-
-
 
 var loadingIcon = document.createElement('i');
 loadingIcon.classList.add("fa", "fa-spinner", "fa-spin");
@@ -57,6 +53,12 @@ form.addEventListener("submit", function (event) {
         return false;
     }
 
+    if(inputApellidos.checkValidity() === false){
+        alert("Escribe tu apellidos(s)");
+        inputApellidos.focus();
+        event.preventDefault();
+        return false;
+    }
 
    if (emailInput.checkValidity() === false) {
         alert("Introduce un email correcto");
@@ -71,9 +73,10 @@ form.addEventListener("submit", function (event) {
         return false;
     }
 
-    if(!validateTextArea){
+    if(validateTextArea.checkValidity() === false){
         alert("Es necesario llenar el campo de 'Text Area ' ");
         $('.text-area').focus();
+        event.preventDefault();
         return false;
     }
  
@@ -86,7 +89,7 @@ form.addEventListener("submit", function (event) {
         form.reset();
         submitButton.removeAttribute("disabled");
         submitButton.removeChild(loadingIcon);
-        //sendNotification("Formulario recibido", "Body de ejemplo");
+        sendNotification("Formulario recibido", "Body de ejemplo");
     }, 1000);
 });
 
