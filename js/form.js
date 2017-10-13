@@ -17,6 +17,7 @@ function toggle(elemento){
    if(radioOptions.option1.checked || radioOptions.option3.checked || radioOptions.option2.checked ){
         console.log("Cheched one of the radio buttons");
          $('.textArea-square').css("display", "none");
+         text_area.value = " "
     }else{
         console.log("Cheched OTRO button");  
         $('.textArea-square').css("display", "block");    
@@ -34,7 +35,7 @@ validateTextArea.addEventListener('click', function(event){
 var loadingIcon = document.createElement('i');
 loadingIcon.classList.add("fa", "fa-spinner", "fa-spin");
 
-$('.text-area').blur( function (event) {
+$('#text-area').blur( function (event) {
     event.preventDefault();
     var numeroPalabras = this.value.split(' ').length;
     document.getElementById("demo").innerHTML = "<small>Palabras escritas </small> <b>" + numeroPalabras + "</b>"
@@ -88,7 +89,7 @@ form.addEventListener("submit", function (event) {
 
     if(validateTextArea.checkValidity() === false){
         alert("Es necesario llenar el campo de 'Text Area ' ");
-        $('.text-area').focus();
+        $('#text-area').focus();
         event.preventDefault();
         return false;
     }
